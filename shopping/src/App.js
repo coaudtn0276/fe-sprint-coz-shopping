@@ -35,7 +35,12 @@ function App() {
                 <div className="shop-percent">
                   {data[1].discountPercentage}%
                 </div>
-                <div className="shop-price">{data[1].price} 원</div>
+                <div className="shop-price">
+                  {data[1].price
+                    .toString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+                  원
+                </div>
               </div>
             </div>
           </Col>
