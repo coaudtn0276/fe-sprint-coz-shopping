@@ -12,11 +12,10 @@ import Footer from "./components/footer";
 
 import dummydata from "./data/dummydata";
 import { useState } from "react";
+import Shoppinglist from "./components/shopplinglist";
 
 function App() {
   const [data, setDate] = useState(dummydata);
-
-  console.log(data[1].image_url);
 
   return (
     <div className="App">
@@ -25,28 +24,9 @@ function App() {
       <Container className="shoppinglist">
         <div className="shoppinglist-title"> 상품리스트</div>
         <Row>
-          <Col sm>
-            <div className="shoppinglist-img">
-              <img className="shoppingimg" src={data[1].image_url} alt="" />
-            </div>
-            <div className="shoppinglist-text">
-              <div className="shop-title">{data[1].title}</div>
-              <div className="shop-right">
-                <div className="shop-percent">
-                  {data[1].discountPercentage}%
-                </div>
-                <div className="shop-price">
-                  {data[1].price
-                    .toString()
-                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
-                  원
-                </div>
-              </div>
-            </div>
-          </Col>
-          <Col sm>sm=true</Col>
-          <Col sm>sm=true</Col>
-          <Col sm>sm=true</Col>
+          {data.map((el, idx) => (
+            <Shoppinglist Col={Col} data={data} idx={idx} />
+          ))}
         </Row>
       </Container>
 
