@@ -11,14 +11,14 @@ const Header = function Header() {
   return (
     <div className="header">
       <div className="header-2">
-        <img src={logo} alt="" className="img" />
+        <img src={logo} alt="" className="logo" />
         <span className="navtitle">COZ Shopping</span>
       </div>
       <div className="dropdown">
         <img
           src={hamburger}
           alt=""
-          className="img2"
+          className="hamburger"
           onClick={() => {
             setDrop(!drop);
           }}
