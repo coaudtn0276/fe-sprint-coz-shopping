@@ -1,5 +1,6 @@
 .App {
   /* text-align: center; */
+  box-sizing: border-box;
 }
 
 .App-logo {
@@ -47,6 +48,7 @@ header .App-header {
   box-shadow: 0px 8px 8px 0px rgb(0, 0, 0, 0.1);
   position: relative;
   position: fixed;
+  top: 0;
   width: 100%;
 }
 .header-2 {
@@ -61,11 +63,11 @@ header .App-header {
   margin-left: 10px;
 }
 
-.img {
+.logo {
   height: 40%;
   margin-left: 76px;
 }
-.img2 {
+.hamburger {
   height: 30%;
   margin-right: 76px;
 }
@@ -89,9 +91,6 @@ header .App-header {
   display: flex;
   align-items: center;
   padding-left: 20px;
-
-  /* justify-content: center; */
-  /* text-align: center; */
 }
 
 .dropdowntitle-2 {
@@ -104,9 +103,6 @@ header .App-header {
   display: flex;
   align-items: center;
   padding-left: 20px;
-
-  /* justify-content: center; */
-  /* text-align: center; */
 }
 
 .dropdowntitle-3 {
@@ -115,12 +111,9 @@ header .App-header {
   position: absolute;
   left: -122px;
   bottom: -170px;
-  /* border-bottom: solid 1px #888; */
   display: flex;
   align-items: center;
   padding-left: 20px;
-  /* justify-content: center; */
-  /* text-align: center; */
 }
 
 .icon {
@@ -140,6 +133,52 @@ header .App-header {
   border-top: solid 1px #888;
 }
 
-/* .footer span {
-  font-size: 20px;
-} */
+/* shoppinglist */
+.shoppinglist {
+  border: solid black;
+  /* margin-left: 0;
+  margin-right: 0; */
+  margin-top: 120px;
+}
+
+.shoppinglist-title {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.shoppinglist-img {
+  border: solid 1px rgb(0, 0, 0, 0.1);
+  width: 264px;
+  height: 210px;
+  border-radius: 12px;
+}
+
+.shoppingimg {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.shoppinglist-text {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
+.shop-title {
+  font-weight: bold;
+}
+
+.shop-percent {
+  font-weight: bold;
+  color: #452cdd;
+}
+
+.shop-price {
+  font-weight: normal;
+}
+
+.shop-right {
+  text-align: right;
+}
