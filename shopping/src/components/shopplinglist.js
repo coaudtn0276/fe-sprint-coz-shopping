@@ -1,16 +1,10 @@
 import { useState } from "react";
 import bookstar from "../img/Bookmark.svg";
-import closebutton from "../img/Vector.svg";
+import Modal from "./Modal";
 
 const Shoppinglist = function Shoppinglist({ Col, data, idx }) {
   const [clickimg, setClickimg] = useState(false);
-
-  function imgclick() {
-    setClickimg(!clickimg);
-    if (clickimg === true) {
-      console.log(1);
-    }
-  }
+  const [starimg, setStarimg] = useState(false);
 
   return (
     <>
@@ -26,7 +20,7 @@ const Shoppinglist = function Shoppinglist({ Col, data, idx }) {
               }
               alt=""
               onClick={() => {
-                imgclick();
+                setClickimg(!clickimg);
               }}
             />
             <img src={bookstar} alt="" className="bookstar" />
@@ -56,35 +50,5 @@ const Shoppinglist = function Shoppinglist({ Col, data, idx }) {
     </>
   );
 };
-
-function Modal({ data, idx, setClickimg }) {
-  return (
-    <div className="modal-bg">
-      <div className="test">
-        <img
-          className="modal-img"
-          src={
-            data[idx].image_url === null
-              ? data[idx].brand_image_url
-              : data[idx].image_url
-          }
-          alt=""
-        />
-        <img
-          className="closebutton"
-          src={closebutton}
-          alt=""
-          onClick={() => {
-            setClickimg(false);
-          }}
-        />
-        <div className="modal-title">
-          <img src={bookstar} alt="" />
-          {data[idx].title}
-        </div>
-      </div>
-    </div>
-  );
-}
 
 export default Shoppinglist;
