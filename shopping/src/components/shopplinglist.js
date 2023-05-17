@@ -1,6 +1,7 @@
 import { useState } from "react";
 import bookstar from "../img/Bookmark.svg";
 import Modal from "./Modal";
+import Toast from "./Toast";
 
 const Shoppinglist = function Shoppinglist({ Col, data, idx }) {
   const [clickimg, setClickimg] = useState(false);
@@ -47,6 +48,8 @@ const Shoppinglist = function Shoppinglist({ Col, data, idx }) {
       {clickimg === true ? (
         <Modal data={data} idx={idx} setClickimg={setClickimg} />
       ) : null}
+      <Toast />
+      <div className="toast">상품이 북마크에 추가되었습니다.</div>
     </>
   );
 };

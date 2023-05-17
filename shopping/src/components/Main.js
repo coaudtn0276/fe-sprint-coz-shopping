@@ -4,19 +4,25 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import Header from "./header";
-import Footer from "./footer";
-
 import dummydata from "../data/dummydata";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Shoppinglist from "./shopplinglist";
+import axios from "axios";
 
 const Main = function Main() {
-  const [data, setDate] = useState(dummydata);
+  const [data, setDate] = useState([]);
+
+  useEffect(() => {
+    axios("http://cozshopping.codestates-seb.link/api/v1/products").then(
+      (res) => {
+        setDate([res.data[0], res.data[1], res.data[2], res.data[3]]);
+        // console.log(res.data[0], res.data[1], res.data[2], res.data[3]);
+      }
+    );
+  }, []);
 
   return (
     <>
-      <Header />
       <Container className="shoppinglist">
         <div className="shoppinglist-title"> 상품리스트</div>
         <Row>
@@ -34,8 +40,6 @@ const Main = function Main() {
           ))}
         </Row>
       </Container>
-
-      <Footer />
     </>
   );
 };

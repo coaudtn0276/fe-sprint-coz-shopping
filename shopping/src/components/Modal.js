@@ -9,7 +9,7 @@ const Modal = function Modal({ data, idx, setClickimg }) {
         setClickimg(false);
       }}
     >
-      <div className="test">
+      <div className="modal-main">
         <img
           className="modal-img"
           src={
