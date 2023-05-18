@@ -4,39 +4,28 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+import { useState } from "react";
+import Itemlist from "./Itemlist";
+
 import dummydata from "../data/dummydata";
-import { useEffect, useState } from "react";
-import Shoppinglist from "./shopplinglist";
-import axios from "axios";
+import Shoppinglist from "./Shoppinglist";
 
-const Main = function Main() {
-  const [data, setDate] = useState([]);
-
-  useEffect(() => {
-    axios("http://cozshopping.codestates-seb.link/api/v1/products").then(
-      (res) => {
-        setDate([res.data[0], res.data[1], res.data[2], res.data[3]]);
-        // console.log(res.data[0], res.data[1], res.data[2], res.data[3]);
-      }
-    );
-  }, []);
-
+const Main = function Main({ maindata }) {
+  const [data, setDate] = useState([
+    maindata[0],
+    maindata[1],
+    maindata[2],
+    maindata[3],
+  ]);
   return (
     <>
-      <Container className="shoppinglist">
-        <div className="shoppinglist-title"> 상품리스트</div>
-        <Row>
-          {data.map((el, idx) => (
-            <Shoppinglist Col={Col} data={data} idx={idx} key={idx} />
-          ))}
-        </Row>
-      </Container>
+      <Shoppinglist maindata={maindata} />
 
       <Container className="shoppinglist">
         <div className="shoppinglist-title"> 북마크 리스트</div>
         <Row>
           {data.map((el, idx) => (
-            <Shoppinglist Col={Col} data={data} idx={idx} key={idx} />
+            <Itemlist Col={Col} data={data} idx={idx} key={idx} />
           ))}
         </Row>
       </Container>

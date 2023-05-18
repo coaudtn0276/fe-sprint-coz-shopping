@@ -3,7 +3,7 @@ import hamburger from "../img/햄버거 버튼.svg";
 import dropdown from "../img/Dropdown.svg";
 import gift from "../img/상품 아이콘.svg";
 import star from "../img/북마크 아이콘.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Header = function Header() {
@@ -38,6 +38,7 @@ const Header = function Header() {
               className="dropdowntitle-2"
               onClick={() => {
                 navigate("/products/list");
+                setDrop(false);
               }}
             >
               <img src={gift} alt="" className="icon" />
@@ -47,6 +48,7 @@ const Header = function Header() {
               className="dropdowntitle-3"
               onClick={() => {
                 navigate("/bookmark");
+                setDrop(false);
               }}
             >
               <img src={star} alt="" className="icon" />
