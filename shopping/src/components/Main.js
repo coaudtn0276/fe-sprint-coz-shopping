@@ -7,7 +7,6 @@ import Col from "react-bootstrap/Col";
 import { useState } from "react";
 import Itemlist from "./Itemlist";
 
-import dummydata from "../data/dummydata";
 import Shoppinglist from "./Shoppinglist";
 
 const Main = function Main({ maindata }) {
