@@ -50,11 +50,13 @@ header .App-header {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 1;
 }
 .header-2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
 
 .navtitle {
@@ -73,7 +75,6 @@ header .App-header {
 }
 
 /* dropdown */
-
 .dropdownimg {
   position: relative;
   position: absolute;
@@ -135,10 +136,17 @@ header .App-header {
 
 /* shoppinglist */
 .shoppinglist {
-  border: solid black;
-  /* margin-left: 0;
-  margin-right: 0; */
+  /* border: solid black; */
+  margin-left: 0px;
+  margin-right: 0px;
   margin-top: 120px;
+}
+
+.shopping-items {
+  width: 264px;
+  height: 264px;
+  margin-right: 24px;
+  /* border: solid 1px red; */
 }
 
 .shoppinglist-title {
@@ -152,12 +160,20 @@ header .App-header {
   width: 264px;
   height: 210px;
   border-radius: 12px;
+  position: relative;
 }
 
 .shoppingimg {
   width: 100%;
   height: 100%;
+  object-fit: cover;
   border-radius: 12px;
+}
+
+.bookstar {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
 }
 
 .shoppinglist-text {
@@ -181,4 +197,121 @@ header .App-header {
 
 .shop-right {
   text-align: right;
+}
+
+/* modal img */
+.modal-bg {
+  position: fixed;
+  z-index: 1; /* 모달창을 제일 앞에 두기 */
+  /* padding-top: 100px; */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* 스크롤 허용 auto */
+  background-color: rgba(255, 255, 255, 0.4); /* 0.4로 바꾸기 */
+
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-main {
+  position: relative;
+  width: 744px;
+  height: 480px;
+  /* background-color: red; */
+}
+
+.modal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0px 0px 36px 0px rgb(0, 0, 0, 0.5); /* 0.5로 바꾸기 */
+}
+
+.closebutton {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  cursor: pointer; /*마우스 손가락모양*/
+}
+
+.modal-title {
+  position: absolute;
+  left: 20px;
+  bottom: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+/* toast */
+.toast {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* position: fixed;
+  z-index: 100;
+  left: 0;
+  bottom: 0;
+  width: 100px;
+  height: 100px;
+  background: red; */
+
+  position: fixed;
+  z-index: 99;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24rem;
+  height: 2.625rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px 0 var(--black-40);
+  background-color: #323232;
+}
+
+/* Productslist */
+.p-list {
+  width: 100%;
+  margin-top: 100px;
+}
+
+.filter-list {
+  height: 10px;
+  width: 20vw;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+
+  font-size: 16px;
+}
+
+.filter-img {
+  width: 82px;
+  margin: 15px 15px 10px 15px;
+  border: solid 1px rgb(0, 0, 0, 0.1);
+  border-radius: 50px;
+}
+
+.textline {
+  font-weight: bold;
+  color: #412dd4;
+  text-decoration-line: underline;
+  text-decoration-thickness: 3px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.position {
+  position: absolute;
+  top: 0;
 }
